@@ -11,10 +11,10 @@ function makeMeRoman(number){
 	];
 	for(var i=0; i<romanArray.length;i++){
 		var numberOfNumeral = Math.floor(number / romanArray[i].number);
+		number -= numberOfNumeral * romanArray[i].number;
 		for (var j=0; j<numberOfNumeral;j++){
 			romanString += romanArray[i].character;
-		}
-		number = number - numberOfNumeral * romanArray[i].number; 
+		} 
 		if(number/ romanArray[i].specialNum >=1){
 			romanString += romanArray[i].specialChar;
 			number -= romanArray[i].specialNum;
